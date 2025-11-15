@@ -1,0 +1,32 @@
+#include <graphics.h>
+#include <iostream>
+using namespace std;
+
+int main() {
+    int gd = DETECT, gm;
+
+    // Initialize graphics mode
+    initgraph(&gd, &gm, "");
+
+    // 1. Draw a Line
+    line(50, 50, 300, 50);
+
+    // 2. Draw a Rectangle
+    rectangle(50, 100, 300, 200);
+
+    // 3. Draw a Circle
+    circle(200, 350, 50);
+
+    // 4. Draw a Triangle (Polygon)
+    int polyPoints[] = {400, 100, 500, 100, 450, 50, 400, 100};
+    drawpoly(4, polyPoints);
+
+    // 5. Display Text
+    settextstyle(DEFAULT_FONT, HORIZ_DIR, 2);
+    outtextxy(50, 400, "Graphics Demo in C++");
+
+    getch(); // Wait for key press
+    closegraph(); // Close graphics mode
+
+    return 0;
+}

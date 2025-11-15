@@ -1,0 +1,52 @@
+#include <iostream>
+using namespace std;
+
+class Student {
+private:
+    string name;
+    int marks;
+
+public:
+    // Function to set data
+    void setData(string n, int m) {
+        name = n;
+        marks = m;
+    }
+
+    // Function to display data
+    void display() {
+        cout << "Name  : " << name << endl;
+        cout << "Marks : " << marks << endl;
+    }
+
+    // Function that takes an object as argument and returns a new object
+    Student compare(Student s2) {
+        Student result;
+        if (marks > s2.marks)
+            result = *this;
+        else
+            result = s2;
+
+        return result;     // Returning object
+    }
+};
+
+int main() {
+    Student s1, s2, top;
+
+    s1.setData("Mohanapriya", 89);
+    s2.setData("Gayathri", 92);
+
+    cout << "---- Student 1 ----" << endl;
+    s1.display();
+    cout << "---- Student 2 ----" << endl;
+    s2.display();
+
+    // Passing object & returning object
+    top = s1.compare(s2);
+
+    cout << "\n---- Top Scorer ----" << endl;
+    top.display();
+
+    return 0;
+}

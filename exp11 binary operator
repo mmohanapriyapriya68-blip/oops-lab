@@ -1,0 +1,53 @@
+#include <iostream>
+using namespace std;
+
+class Number {
+private:
+    int x;
+
+public:
+    void setData(int val) {
+        x = val;
+    }
+
+    void display() {
+        cout << "Value: " << x << endl;
+    }
+
+    // Overloading binary + operator
+    Number operator+(Number n) {
+        Number temp;
+        temp.x = x + n.x;
+        return temp;
+    }
+
+    // Overloading binary - operator
+    Number operator-(Number n) {
+        Number temp;
+        temp.x = x - n.x;
+        return temp;
+    }
+};
+
+int main() {
+    Number n1, n2, n3, n4;
+
+    n1.setData(20);
+    n2.setData(10);
+
+    cout << "--- Original Values ---" << endl;
+    n1.display();
+    n2.display();
+
+    // Using binary + operator
+    n3 = n1 + n2;
+    cout << "\n--- After n1 + n2 ---" << endl;
+    n3.display();
+
+    // Using binary - operator
+    n4 = n1 - n2;
+    cout << "\n--- After n1 - n2 ---" << endl;
+    n4.display();
+
+    return 0;
+}

@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+
+// User-defined namespace
+namespace MyNamespace {
+    void greet() {
+        cout << "Hello from MyNamespace!" << endl;
+    }
+
+    int add(int a, int b) {
+        return a + b;
+    }
+}
+
+int main() {
+    // Calling functions using namespace name
+    MyNamespace::greet();
+
+    int sum = MyNamespace::add(10, 20);
+    cout << "Sum: " << sum << endl;
+
+    return 0;
+}

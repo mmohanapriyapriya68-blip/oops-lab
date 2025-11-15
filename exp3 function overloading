@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+
+class Calculator {
+public:
+    // Function with one parameter
+    int add(int a) {
+        return a + 10;
+    }
+
+    // Overloaded function with two parameters
+    int add(int a, int b) {
+        return a + b;
+    }
+
+    // Overloaded function with three parameters
+    int add(int a, int b, int c) {
+        return a + b + c;
+    }
+};
+
+int main() {
+    Calculator c;
+
+    cout << "Result (1 argument) : " << c.add(5) << endl;
+    cout << "Result (2 arguments): " << c.add(5, 15) << endl;
+    cout << "Result (3 arguments): " << c.add(5, 10, 15) << endl;
+
+    return 0;
+}

@@ -1,0 +1,35 @@
+#include <iostream>
+using namespace std;
+
+class Student {
+private:
+    string name;
+    int age;
+
+public:
+    // Member function defined INSIDE the class
+    void setData(string n, int a) {
+        name = n;
+        age = a;
+    }
+
+    // Member function declared inside but defined OUTSIDE the class
+    void display();
+};
+
+// Definition of member function outside the class
+void Student::display() {
+    cout << "Student Name : " << name << endl;
+    cout << "Student Age  : " << age << endl;
+}
+
+int main() {
+    Student s1;
+
+    s1.setData("Mohanapriya", 19);  // Calling inside-class function
+
+    cout << "=== Student Details ===" << endl;
+    s1.display();  // Calling outside-class function
+
+    return 0;
+}

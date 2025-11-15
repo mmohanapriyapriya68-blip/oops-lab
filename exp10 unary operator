@@ -1,0 +1,46 @@
+#include <iostream>
+using namespace std;
+
+class Number {
+private:
+    int x;
+
+public:
+    void setData(int val) {
+        x = val;
+    }
+
+    void display() {
+        cout << "Value: " << x << endl;
+    }
+
+    // Overloading unary minus (-) operator
+    void operator-() {
+        x = -x;
+    }
+
+    // Overloading prefix increment operator (++obj)
+    void operator++() {
+        x = x + 1;
+    }
+};
+
+int main() {
+    Number n1;
+
+    n1.setData(10);
+    cout << "--- Original Value ---" << endl;
+    n1.display();
+
+    // Using unary minus
+    -n1;
+    cout << "\n--- After Unary Minus (-) ---" << endl;
+    n1.display();
+
+    // Using prefix increment
+    ++n1;
+    cout << "\n--- After Prefix Increment (++obj) ---" << endl;
+    n1.display();
+
+    return 0;
+}

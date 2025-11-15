@@ -1,0 +1,26 @@
+#include <iostream>
+#include <csignal>   // Required for signal handling
+#include <cstdlib>   // Required for exit()
+using namespace std;
+
+// Signal handler function
+void signalHandler(int signum) {
+    cout << "\nInterrupt signal (" << signum << ") received." << endl;
+    cout << "Terminating the program safely..." << endl;
+    exit(signum);
+}
+
+int main() {
+    // Register signal handler for Ctrl+C (SIGINT)
+    signal(SIGINT, signalHandler);
+
+    cout << "Press Ctrl+C to trigger the interrupt signal..." << endl;
+
+    // Infinite loop to keep the program running
+    while (true) {
+        cout << "Program running..." << endl;
+        for (int i = 0; i < 100000000; i++); // Simple delay loop
+    }
+
+    return 0;
+}

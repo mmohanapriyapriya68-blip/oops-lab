@@ -1,0 +1,49 @@
+#include <iostream>
+using namespace std;
+
+class Student {
+private:
+    string name;
+    int age;
+
+public:
+    // Static data member (common for all objects)
+    static int count;
+
+    // Parameterized constructor
+    Student(string n, int a) {
+        name = n;
+        age = a;
+        count++;   // increment static variable
+    }
+
+    // Display object data
+    void display() {
+        cout << "Name : " << name << endl;
+        cout << "Age  : " << age << endl;
+    }
+
+    // Static member function
+    static void showCount() {
+        cout << "Total Students Created : " << count << endl;
+    }
+};
+
+// Definition of static data member
+int Student::count = 0;
+
+int main() {
+    Student s1("Mohanapriya", 19);
+    Student s2("Gayathri", 20);
+    Student s3("Nandini", 25);
+
+    cout << "\n--- Student Details ---" << endl;
+    s1.display();
+    s2.display();
+    s3.display();
+
+    cout << "\n--- Using Static Function ---" << endl;
+    Student::showCount(); // Calling static function
+
+    return 0;
+}

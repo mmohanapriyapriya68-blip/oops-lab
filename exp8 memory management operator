@@ -1,0 +1,50 @@
+#include <iostream>
+using namespace std;
+
+class Student {
+private:
+    string name;
+    int age;
+
+public:
+    void setData(string n, int a) {
+        name = n;
+        age = a;
+    }
+
+    void display() {
+        cout << "Name : " << name << endl;
+        cout << "Age  : " << age << endl;
+    }
+};
+
+int main() {
+    // Dynamic memory allocation for single object
+    Student *s1 = new Student;
+
+    s1->setData("Mohanapriya", 19);
+
+    cout << "--- Single Student Details (Using new) ---" << endl;
+    s1->display();
+
+    // Deleting dynamically allocated object
+    delete s1;
+
+    // Dynamic memory allocation for array of objects
+    int n = 2;
+    Student *sArr = new Student[n];
+
+    sArr[0].setData("Gayathri", 20);
+    sArr[1].setData("Nandini", 25);
+
+    cout << "\n--- Array of Students (Using new) ---" << endl;
+    for (int i = 0; i < n; i++) {
+        cout << "\nStudent " << i + 1 << ":" << endl;
+        sArr[i].display();
+    }
+
+    // Deleting dynamically allocated array
+    delete[] sArr;
+
+    return 0;
+}

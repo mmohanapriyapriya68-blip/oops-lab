@@ -1,0 +1,13 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    cout << "Content-type:text/html\n\n";
+    cout << "<html>\n";
+    cout << "<head><title>My C++ Web Page</title></head>\n";
+    cout << "<body>\n";
+    cout << "<h1>Hello from C++ CGI!</h1>\n";
+    cout << "</body>\n";
+    cout << "</html>\n";
+    return 0;
+}

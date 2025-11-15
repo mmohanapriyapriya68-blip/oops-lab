@@ -1,0 +1,34 @@
+#include <iostream>
+using namespace std;
+
+// Class definition
+class Student {
+private:
+    string name;
+    int age;
+
+public:
+    // Function to set data
+    void setData(string n, int a) {
+        name = n;
+        age = a;
+    }
+
+    // Function to display data
+    void display() {
+        cout << "Student Name : " << name << endl;
+        cout << "Student Age  : " << age << endl;
+    }
+};
+
+int main() {
+    Student s1;    // Creating object
+
+    // Setting values using member function
+    s1.setData("Mohanapriya", 19);
+
+    cout << "=== Student Details ===" << endl;
+    s1.display();
+
+    return 0;
+}

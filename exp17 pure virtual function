@@ -1,0 +1,37 @@
+#include <iostream>
+using namespace std;
+
+class Student {
+private:
+    string name;
+    int age;
+
+public:
+    // Inline function to set data
+    inline void setData(string n, int a) {
+        name = n;
+        age = a;
+    }
+
+    // Inline function to display data
+    inline void display() {
+        cout << "Name : " << name << endl;
+        cout << "Age  : " << age << endl;
+    }
+};
+
+int main() {
+    // Creating object
+    Student s1;
+
+    // Pointer to object
+    Student* ptr = &s1;
+
+    // Using pointer to call inline function
+    ptr->setData("Mohanapriya", 19);
+
+    cout << "--- Student Details ---" << endl;
+    ptr->display();
+
+    return 0;
+}

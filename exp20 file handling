@@ -1,0 +1,38 @@
+#include <iostream>
+#include <fstream> // Required for file handling
+using namespace std;
+
+int main() {
+    // 1. Writing to a file
+    ofstream outFile("student.txt"); // Create and open file
+
+    if (!outFile) {
+        cout << "Error opening file for writing!" << endl;
+        return 1;
+    }
+
+    outFile << "Name: Mohanapriya\n";
+    outFile << "Roll No: 11249\n";
+    outFile << "Marks: 89\n";
+
+    outFile.close(); // Close the file
+    cout << "--- Data written to file successfully ---\n" << endl;
+
+    // 2. Reading from a file
+    ifstream inFile("student.txt"); // Open file for reading
+
+    if (!inFile) {
+        cout << "Error opening file for reading!" << endl;
+        return 1;
+    }
+
+    string line;
+    cout << "--- Reading Data from File ---" << endl;
+    while (getline(inFile, line)) {
+        cout << line << endl;
+    }
+
+    inFile.close(); // Close the file
+
+    return 0;
+}

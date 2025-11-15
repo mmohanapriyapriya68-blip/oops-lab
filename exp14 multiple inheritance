@@ -1,0 +1,43 @@
+#include <iostream>
+using namespace std;
+
+// Base class 1
+class Student {
+protected:
+    string name;
+public:
+    void setName(string n) {
+        name = n;
+    }
+};
+
+// Base class 2
+class Exam {
+protected:
+    int marks;
+public:
+    void setMarks(int m) {
+        marks = m;
+    }
+};
+
+// Derived class inheriting from Student and Exam
+class Result : public Student, public Exam {
+public:
+    void display() {
+        cout << "Name  : " << name << endl;
+        cout << "Marks : " << marks << endl;
+    }
+};
+
+int main() {
+    Result r1;
+
+    r1.setName("Mohanapriya");
+    r1.setMarks(89);
+
+    cout << "--- Student Result ---" << endl;
+    r1.display();
+
+    return 0;
+}

@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+
+// Class template
+template <class T>
+class Calculator {
+private:
+    T a, b;
+
+public:
+    void setData(T x, T y) {
+        a = x;
+        b = y;
+    }
+
+    T add() {
+        return a + b;
+    }
+
+    T multiply() {
+        return a * b;
+    }
+};
+
+int main() {
+    // Integer type
+    Calculator<int> intCalc;
+    intCalc.setData(10, 20);
+    cout << "--- Integer Operations ---" << endl;
+    cout << "Addition       : " << intCalc.add() << endl;
+    cout << "Multiplication : " << intCalc.multiply() << endl;
+
+    //

@@ -1,0 +1,62 @@
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+class MyString {
+private:
+    char str[100];
+
+public:
+    // Constructor
+    MyString() {
+        strcpy(str, "");
+    }
+
+    MyString(const char* s) {
+        strcpy(str, s);
+    }
+
+    // Display function
+    void display() {
+        cout << str << endl;
+    }
+
+    // Overloading assignment operator (=)
+    void operator=(MyString s) {
+        strcpy(str, s.str);
+    }
+
+    // Overloading comparison operator (==)
+    bool operator==(MyString s) {
+        return strcmp(str, s.str) == 0;
+    }
+};
+
+int main() {
+    MyString s1("Mohanapriya");
+    MyString s2;
+    MyString s3("Gayathri");
+
+    cout << "--- Original Strings ---" << endl;
+    cout << "s1: "; s1.display();
+    cout << "s2: "; s2.display();
+    cout << "s3: "; s3.display();
+
+    // Assignment
+    s2 = s1;
+    cout << "\n--- After Assignment s2 = s1 ---" << endl;
+    cout << "s2: "; s2.display();
+
+    // Comparison
+    if (s1 == s2)
+        cout << "\nResult: s1 is equal to s2" << endl;
+    else
+        cout << "\nResult: s1 is not equal to s2" << endl;
+
+    if (s1 == s3)
+        cout << "Result: s1 is equal to s3" << endl;
+    else
+        cout << "Result: s1 is not equal to s3" << endl;
+
+    return 0;
+}

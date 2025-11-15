@@ -1,0 +1,38 @@
+#include <iostream>
+using namespace std;
+
+class Student {
+private:
+    string name;
+    int age;
+
+public:
+    void setData(string n, int a) {
+        name = n;
+        age = a;
+    }
+
+    void display() {
+        cout << "Name : " << name << endl;
+        cout << "Age  : " << age << endl;
+    }
+};
+
+int main() {
+    Student s[3];  // Array of 3 objects
+
+    // Storing values in array objects
+    s[0].setData("Mohanapriya", 19);
+    s[1].setData("Gayathri", 20);
+    s[2].setData("Nandini", 25);
+
+    cout << "--- Student Details (Array of Objects) ---" << endl;
+
+    // Displaying values using loop
+    for (int i = 0; i < 3; i++) {
+        cout << "\nStudent " << i + 1 << ":" << endl;
+        s[i].display();
+    }
+
+    return 0;
+}
